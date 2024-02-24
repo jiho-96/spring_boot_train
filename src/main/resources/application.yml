@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/springBootdb
+    username: root
+    password: 12345
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mapper_xml/board/*.xml
+
+logging:
+  level:
+    jdbc:
+      audit: warn
+      connection: warn
+      resultset: warn
+      resultsettable: info
+      sqlonly: warn
+      sqltiming: info

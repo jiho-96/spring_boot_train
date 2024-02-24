@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.springboot_study.board.mapper.BoardMapper">
+
+    <select id="boardList" resultType="com.spring.springboot_study.board.dto.BoardDTO">
+        SELECT IDX, TITLE, CREATE_TIME FROM TB_BOARD
+        WHERE USED = 'Y';
+    </select>
+
+    <select id="boardSearchList" parameterType="com.spring.springboot_study.board.dto.BoardSearchRequestDTO" resultType="com.spring.springboot_study.board.dto.BoardSearchResponseDTO">
+        SELECT IDX, TITLE, CREATE_TIME FROM TB_BOARD
+        WHERE USED = 'Y'
+        AND TITLE LIKE CONCAT('%', #{titles}, '%');
+    </select>
+
+    <update id="boardUpdate" parameterType="com.spring.springboot_study.board.dto.BoardUpdateRequestDTO">
+        UPDATE TB_BOARD SET TITLE = #{title}, CONTENTS = #{contents}, UPDATE_DATE = now()
+        WHERE IDX = #{idx}
+    </update>
+</mapper>

@@ -27,4 +27,19 @@ public class BoardServiceImpl implements BoardService{
     public Integer updateBoardList(BoardUpdateRequestDTO boardUpdateRequestDTO) {
         return boardMapper.boardUpdate(boardUpdateRequestDTO);
     }
+
+    @Override
+    public Integer writeBoard(BoardWriteRequestDTO boardWriteRequestDTO) {
+        return boardMapper.boardWrite(boardWriteRequestDTO);
+    }
+
+    @Override
+    public Integer deleteBoard(BoardDeleteRequestDTO boardDeleteRequestDTO) {
+        return boardMapper.boardDelete(boardDeleteRequestDTO);
+    }
+
+    @Override
+    public Integer deleteLogicalBoard(BoardLogicalDeleteRequestDTO boardLogicalDeleteRequestDTO) {
+        return boardMapper.boardLogicalDelete(boardLogicalDeleteRequestDTO);
+    }
 }

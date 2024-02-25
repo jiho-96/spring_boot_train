@@ -19,4 +19,17 @@
         UPDATE TB_BOARD SET TITLE = #{title}, CONTENTS = #{contents}, UPDATE_DATE = now()
         WHERE IDX = #{idx}
     </update>
+
+    <insert id="boardWrite" parameterType="com.spring.springboot_study.board.dto.BoardWriteRequestDTO">
+        INSERT INTO TB_BOARD (CREATER, TITLE, CONTENTS) VALUE (#{idx}, #{title}, #{contents})
+    </insert>
+
+    <delete id="boardDelete" parameterType="com.spring.springboot_study.board.dto.BoardDeleteRequestDTO">
+        DELETE FROM TB_BOARD WHERE IDX = #{idx}
+    </delete>
+
+    <update id="boardLogicalDelete" parameterType="com.spring.springboot_study.board.dto.BoardLogicalDeleteRequestDTO">
+        UPDATE TB_BOARD SET USED = 'N'
+        WHERE IDX = #{idx}
+    </update>
 </mapper>

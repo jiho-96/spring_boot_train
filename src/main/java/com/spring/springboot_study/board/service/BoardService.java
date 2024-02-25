@@ -11,4 +11,10 @@ public interface BoardService {
     List<BoardSearchResponseDTO> viewSearchList(BoardSearchRequestDTO boardSearchRequestDTO);
 
     Integer updateBoardList(BoardUpdateRequestDTO boardUpdateRequestDTO);
+
+    Integer writeBoard(BoardWriteRequestDTO boardWriteRequestDTO);
+
+    Integer deleteBoard(BoardDeleteRequestDTO boardDeleteRequestDTO);
+
+    Integer deleteLogicalBoard(BoardLogicalDeleteRequestDTO boardLogicalDeleteRequestDTO);
 }

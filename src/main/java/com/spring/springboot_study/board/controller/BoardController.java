@@ -25,9 +25,27 @@ public class BoardController {
         return boardService.viewSearchList(boardSearchRequestDTO);
     }
 
-    // 게시판 글 업데이터
+    // 게시판 글 업데이트
     @PostMapping(value = "/update")
     public Integer BoardUpdate(@RequestBody BoardUpdateRequestDTO boardUpdateRequestDTO){
         return boardService.updateBoardList(boardUpdateRequestDTO);
+    }
+
+    // 게시판 글 작성
+    @PostMapping(value = "/write")
+    public Integer BoardWrite(@RequestBody BoardWriteRequestDTO boardWriteRequestDTO){
+        return boardService.writeBoard(boardWriteRequestDTO);
+    }
+
+    // 게시판 글 삭제 (물리적 삭제)
+    @PostMapping(value = "/delete")
+    public Integer BoardDelete(@RequestBody BoardDeleteRequestDTO boardDeleteRequestDTO){
+        return boardService.deleteBoard(boardDeleteRequestDTO);
+    }
+
+    // 게시판 글 삭제 (논리적 삭제)
+    @PostMapping(value = "/delete2")
+    public Integer BoardDelete2(@RequestBody BoardLogicalDeleteRequestDTO boardLogicalDeleteRequestDTO){
+        return boardService.deleteLogicalBoard(boardLogicalDeleteRequestDTO);
     }
 }

@@ -13,4 +13,7 @@ public interface BoardMapper {
     List<BoardDTO> boardList();
     List<BoardSearchResponseDTO> boardSearchList(BoardSearchRequestDTO boardSearchRequestDTO);
     Integer boardUpdate(BoardUpdateRequestDTO boardUpdateRequestDTO);
+    Integer boardWrite(BoardWriteRequestDTO boardWriteRequestDTO);
+    Integer boardDelete(BoardDeleteRequestDTO boardDeleteRequestDTO);
+    Integer boardLogicalDelete(BoardLogicalDeleteRequestDTO boardLogicalDeleteRequestDTO);
 }

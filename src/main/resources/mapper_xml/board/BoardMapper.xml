@@ -6,7 +6,8 @@
 
     <select id="boardList" resultType="com.spring.springboot_study.board.dto.BoardDTO">
         SELECT IDX, TITLE, CREATE_TIME FROM TB_BOARD
-        WHERE USED = 'Y';
+        WHERE USED = 'Y'
+        ORDER BY IDX DESC
     </select>
 
     <select id="boardDetail" parameterType="com.spring.springboot_study.board.dto.BoardDetailRequestDTO" resultType="com.spring.springboot_study.board.dto.BoardDetailDTO">

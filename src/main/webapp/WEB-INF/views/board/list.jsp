@@ -8,7 +8,6 @@
     <title>Board</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <style>
-        /* 기본 스타일링 */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -27,7 +26,7 @@
         #boardTable th {
             background-color: #f2f2f2;
         }
-        /* 마우스 호버 시 배경색 변경 */
+
         #boardTable tbody tr:hover {
             background-color: #f5f5f5;
         }
@@ -43,9 +42,9 @@
     </tr>
     </thead>
     <tbody id="body">
-
     </tbody>
 </table>
+
 
 <script type="text/javascript">
     function Listloading(e){

@@ -11,9 +11,12 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
     List<BoardDTO> boardList();
+    BoardDetailDTO boardDetail(BoardDetailRequestDTO boardDetailRequestDTO);
     List<BoardSearchResponseDTO> boardSearchList(BoardSearchRequestDTO boardSearchRequestDTO);
     Integer boardUpdate(BoardUpdateRequestDTO boardUpdateRequestDTO);
     Integer boardWrite(BoardWriteRequestDTO boardWriteRequestDTO);
     Integer boardDelete(BoardDeleteRequestDTO boardDeleteRequestDTO);
     Integer boardLogicalDelete(BoardLogicalDeleteRequestDTO boardLogicalDeleteRequestDTO);
+
+
 }

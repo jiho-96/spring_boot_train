@@ -1,10 +1,19 @@
 server:
   port: 8080
+  servlet:
+    jsp:
+      init-parameters:
+        development: true
 
 spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
   datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/springBootdb
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mariadb://localhost:3306/springBootdb
     username: root
     password: 12345
 
@@ -22,3 +31,4 @@ logging:
       resultsettable: info
       sqlonly: warn
       sqltiming: info
+

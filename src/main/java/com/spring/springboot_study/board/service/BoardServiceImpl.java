@@ -19,6 +19,11 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
+    public BoardDetailDTO detailView(BoardDetailRequestDTO boardDetailRequestDTO) {
+        return boardMapper.boardDetail(boardDetailRequestDTO);
+    }
+
+    @Override
     public List<BoardSearchResponseDTO> viewSearchList(BoardSearchRequestDTO boardSearchRequestDTO) {
         return boardMapper.boardSearchList(boardSearchRequestDTO);
     }

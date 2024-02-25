@@ -6,7 +6,9 @@ import java.util.List;
 
 @Service
 public interface BoardService {
-    public List<BoardDTO> viewAllList();
+    List<BoardDTO> viewAllList();
+
+    BoardDetailDTO detailView(BoardDetailRequestDTO boardDetailRequestDTO);
 
     List<BoardSearchResponseDTO> viewSearchList(BoardSearchRequestDTO boardSearchRequestDTO);
 
@@ -17,4 +19,5 @@ public interface BoardService {
     Integer deleteBoard(BoardDeleteRequestDTO boardDeleteRequestDTO);
 
     Integer deleteLogicalBoard(BoardLogicalDeleteRequestDTO boardLogicalDeleteRequestDTO);
+
 }

@@ -9,6 +9,11 @@
         WHERE USED = 'Y';
     </select>
 
+    <select id="boardDetail" parameterType="com.spring.springboot_study.board.dto.BoardDetailRequestDTO" resultType="com.spring.springboot_study.board.dto.BoardDetailDTO">
+        SELECT IDX, TITLE, CONTENTS FROM TB_BOARD
+        WHERE IDX = #{idx}
+    </select>
+
     <select id="boardSearchList" parameterType="com.spring.springboot_study.board.dto.BoardSearchRequestDTO" resultType="com.spring.springboot_study.board.dto.BoardSearchResponseDTO">
         SELECT IDX, TITLE, CREATE_TIME FROM TB_BOARD
         WHERE USED = 'Y'
